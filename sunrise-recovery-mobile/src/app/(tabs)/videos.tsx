@@ -4,7 +4,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { Card } from '../../components/ui/Card';
 import { VideoCategories } from '../../components/features/videos/VideoCategories';
+import { VideoPlayer } from '../../components/features/videos/VideoPlayer';
+import { VideoThumbnail } from '../../components/features/videos/VideoThumbnail';
 import { api } from '../../lib/api';
+import { getVideosByCategory } from '../../lib/sampleVideos';
 import { Video } from '../../types/supabase';
 
 const categories = [
@@ -20,6 +23,8 @@ export default function VideosScreen() {
   const [videos, setVideos] = useState<Video[]>([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
+  const [isVideoPlayerVisible, setIsVideoPlayerVisible] = useState(false);
 
   useEffect(() => {
     loadVideos();
@@ -28,8 +33,9 @@ export default function VideosScreen() {
   const loadVideos = async () => {
     try {
       setIsLoading(true);
-      const videoData = await api.getVideos(selectedCategory === 'all' ? undefined : selectedCategory);
-      setVideos(videoData);
+      // For now, use sample data instead of API call
+      const videoData = getVideosByCategory(selectedCategory === 'all' ? undefined : selectedCategory);
+      setVideos(videoData as Video[]);
     } catch (error) {
       console.error('Failed to load videos:', error);
     } finally {
@@ -37,23 +43,22 @@ export default function VideosScreen() {
     }
   };
 
-  const formatDuration = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-  };
+
 
   const renderVideoItem = ({ item }: { item: Video }) => (
-    <TouchableOpacity style={styles.videoItem}>
+    <TouchableOpacity 
+      style={styles.videoItem}
+      onPress={() => {
+        setSelectedVideo(item);
+        setIsVideoPlayerVisible(true);
+      }}
+    >
       <Card variant="default" padding="none" style={styles.videoCard}>
-        <View style={styles.videoThumbnail}>
-          <View style={styles.thumbnailPlaceholder}>
-            <Ionicons name="play-circle" size={40} color="#ffffff" />
-          </View>
-          <View style={styles.durationBadge}>
-            <Text style={styles.durationText}>{formatDuration(item.duration)}</Text>
-          </View>
-        </View>
+        <VideoThumbnail
+          thumbnailUrl={item.thumbnail_url}
+          duration={item.duration}
+          title={item.title}
+        />
         
         <View style={styles.videoInfo}>
           <Text style={styles.videoTitle} numberOfLines={2}>
@@ -66,7 +71,6 @@ export default function VideosScreen() {
             <View style={styles.categoryBadge}>
               <Text style={styles.categoryText}>{item.category}</Text>
             </View>
-            <Text style={styles.viewCount}>{item.view_count} views</Text>
           </View>
         </View>
       </Card>
@@ -116,6 +120,15 @@ export default function VideosScreen() {
           )}
         </View>
       </ScrollView>
+      
+      <VideoPlayer
+        video={selectedVideo}
+        isVisible={isVideoPlayerVisible}
+        onClose={() => {
+          setIsVideoPlayerVisible(false);
+          setSelectedVideo(null);
+        }}
+      />
     </SafeAreaView>
   );
 }
@@ -158,31 +171,6 @@ const styles = StyleSheet.create({
   videoCard: {
     overflow: 'hidden',
   },
-  videoThumbnail: {
-    position: 'relative',
-    height: 160,
-    backgroundColor: '#e5e7eb',
-  },
-  thumbnailPlaceholder: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9ca3af',
-  },
-  durationBadge: {
-    position: 'absolute',
-    bottom: 8,
-    right: 8,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-    borderRadius: 4,
-  },
-  durationText: {
-    color: '#ffffff',
-    fontSize: 12,
-    fontWeight: '600',
-  },
   videoInfo: {
     padding: 16,
   },
@@ -214,10 +202,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     textTransform: 'uppercase',
   },
-  viewCount: {
-    fontSize: 12,
-    color: '#6b7280',
-  },
+
   loadingContainer: {
     alignItems: 'center',
     padding: 40,
