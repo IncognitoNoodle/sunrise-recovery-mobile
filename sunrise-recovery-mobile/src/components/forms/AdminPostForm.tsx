@@ -140,11 +140,11 @@ export const AdminPostForm: React.FC<AdminPostFormProps> = ({
                     value={value}
                     onChangeText={onChange}
                     onBlur={onBlur}
-                    placeholder="Write your post content here..."
+                    placeholder="Share your thoughts, recovery tips, or encouraging words with the community..."
                     error={errors.content?.message}
                     helper="Share your message with the community"
                     multiline
-                    numberOfLines={6}
+                    numberOfLines={8}
                     textAlignVertical="top"
                   />
                 )}
@@ -215,31 +215,7 @@ export const AdminPostForm: React.FC<AdminPostFormProps> = ({
                 )}
               />
 
-              <Controller
-                control={control}
-                name="is_published"
-                render={({ field: { onChange, value } }) => (
-                  <View style={styles.publishContainer}>
-                    <Text style={styles.publishLabel}>Publish Status</Text>
-                    <View style={styles.publishButtons}>
-                      <Button
-                        title="Save as Draft"
-                        variant={!value ? 'primary' : 'outline'}
-                        size="small"
-                        onPress={() => onChange(false)}
-                        style={styles.publishButton}
-                      />
-                      <Button
-                        title="Publish Now"
-                        variant={value ? 'primary' : 'outline'}
-                        size="small"
-                        onPress={() => onChange(true)}
-                        style={styles.publishButton}
-                      />
-                    </View>
-                  </View>
-                )}
-              />
+
 
               <View style={styles.actions}>
                 <Button
@@ -294,11 +270,11 @@ export const AdminPostForm: React.FC<AdminPostFormProps> = ({
                       value={value}
                       onChangeText={onChange}
                       onBlur={onBlur}
-                      placeholder="Write your post content here..."
+                      placeholder="Share your thoughts, recovery tips, or encouraging words with the community..."
                       error={errors.content?.message}
                       helper="Share your message with the community"
                       multiline
-                      numberOfLines={6}
+                      numberOfLines={8}
                       textAlignVertical="top"
                     />
                   )}
@@ -369,31 +345,7 @@ export const AdminPostForm: React.FC<AdminPostFormProps> = ({
                   )}
                 />
 
-                <Controller
-                  control={control}
-                  name="is_published"
-                  render={({ field: { onChange, value } }) => (
-                    <View style={styles.publishContainer}>
-                      <Text style={styles.publishLabel}>Publish Status</Text>
-                      <View style={styles.publishButtons}>
-                        <Button
-                          title="Save as Draft"
-                          variant={!value ? 'primary' : 'outline'}
-                          size="small"
-                          onPress={() => onChange(false)}
-                          style={styles.publishButton}
-                        />
-                        <Button
-                          title="Publish Now"
-                          variant={value ? 'primary' : 'outline'}
-                          size="small"
-                          onPress={() => onChange(true)}
-                          style={styles.publishButton}
-                        />
-                      </View>
-                    </View>
-                  )}
-                />
+
 
                 <View style={styles.actions}>
                   <Button
@@ -439,14 +391,16 @@ const styles = StyleSheet.create({
     borderBottomColor: '#f3f4f6',
   },
   modalTitle: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 8,
+    textAlign: 'center',
   },
   modalSubtitle: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
+    textAlign: 'center',
   },
   screenContainer: {
     flex: 1,
@@ -466,7 +420,7 @@ const styles = StyleSheet.create({
   selectLabel: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#374151',
+    color: '#2772AA',
   },
   selectGrid: {
     flexDirection: 'row',
@@ -483,7 +437,7 @@ const styles = StyleSheet.create({
   publishLabel: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#374151',
+    color: '#2772AA',
   },
   publishButtons: {
     flexDirection: 'row',

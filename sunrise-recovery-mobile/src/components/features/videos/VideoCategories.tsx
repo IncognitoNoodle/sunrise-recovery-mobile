@@ -37,8 +37,8 @@ export const VideoCategories: React.FC<VideoCategoriesProps> = ({
           >
             <Ionicons
               name={category.icon as any}
-              size={16}
-              color={selectedCategory === category.id ? '#ffffff' : '#6b7280'}
+              size={18}
+              color={selectedCategory === category.id ? '#ffffff' : '#494949'}
             />
             <Text
               style={[
@@ -66,23 +66,39 @@ const styles = StyleSheet.create({
   categoryButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    marginRight: 8,
-    borderRadius: 20,
-    backgroundColor: '#f3f4f6',
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    marginRight: 10,
+    borderRadius: 25,
+    backgroundColor: '#f8fafc',
     borderWidth: 1,
     borderColor: '#e5e7eb',
+    shadowColor: '#2772AA',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 2,
   },
   categoryButtonSelected: {
-    backgroundColor: '#0ea5e9',
-    borderColor: '#0ea5e9',
+    backgroundColor: '#2772AA',
+    borderColor: '#2772AA',
+    shadowColor: '#2772AA',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 4,
   },
   categoryText: {
     fontSize: 14,
-    color: '#6b7280',
-    marginLeft: 6,
-    fontWeight: '500',
+    color: '#494949',
+    marginLeft: 8,
+    fontWeight: '600',
   },
   categoryTextSelected: {
     color: '#ffffff',

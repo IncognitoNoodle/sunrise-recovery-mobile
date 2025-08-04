@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '../../stores/authStore';
 import { Card } from '../../components/ui/Card';
@@ -22,6 +22,13 @@ export default function DashboardScreen() {
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
+          <View style={styles.logoContainer}>
+            <Image 
+              source={require('../../../assets/logo.png')} 
+              style={styles.logo}
+              resizeMode="contain"
+            />
+          </View>
           <Text style={styles.welcomeText}>
             Welcome back, {profile.full_name}!
           </Text>
@@ -54,15 +61,26 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingBottom: 10,
   },
+  logoContainer: {
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  logo: {
+    width: 120,
+    height: 60,
+    backgroundColor: 'transparent',
+  },
   welcomeText: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 8,
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
+    textAlign: 'center',
   },
   content: {
     padding: 20,

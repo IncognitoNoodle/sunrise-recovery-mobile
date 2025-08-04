@@ -26,10 +26,10 @@ export const AdminAnnouncements: React.FC = () => {
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'high': return '#dc2626';
-      case 'medium': return '#f59e0b';
-      case 'low': return '#059669';
-      default: return '#6b7280';
+      case 'high': return '#ef4444';
+      case 'medium': return '#FEC18A';
+      case 'low': return '#ABCA87';
+      default: return '#494949';
     }
   };
 
@@ -102,19 +102,19 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 16,
   },
   loadingText: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
     textAlign: 'center',
   },
   emptyText: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
     textAlign: 'center',
     fontStyle: 'italic',
   },
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   announcementTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 4,
   },
   metaInfo: {
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   },
   date: {
     fontSize: 12,
-    color: '#6b7280',
+    color: '#494949',
   },
   priorityBadge: {
     paddingHorizontal: 8,
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   announcementContent: {
     fontSize: 14,
-    color: '#374151',
+    color: '#494949',
     lineHeight: 20,
   },
 });

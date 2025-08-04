@@ -53,6 +53,7 @@ export const Input: React.FC<InputProps> = ({
     (rightIcon || secure) && styles.inputWithRightIcon,
     isFocused && styles.inputFocused,
     error && styles.inputError,
+    props.multiline && styles.inputMultiline,
     style,
   ];
 
@@ -118,8 +119,8 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    fontWeight: '500',
-    color: '#374151',
+    fontWeight: '600',
+    color: '#2772AA',
     marginBottom: 8,
   },
   inputContainer: {
@@ -138,6 +139,12 @@ const styles = StyleSheet.create({
     color: '#111827',
     backgroundColor: '#ffffff',
   },
+  inputMultiline: {
+    height: 120,
+    paddingTop: 12,
+    paddingBottom: 12,
+    textAlignVertical: 'top',
+  },
   inputWithLeftIcon: {
     paddingLeft: 48,
   },
@@ -145,7 +152,7 @@ const styles = StyleSheet.create({
     paddingRight: 48,
   },
   inputFocused: {
-    borderColor: '#0ea5e9',
+    borderColor: '#2772AA',
     borderWidth: 2,
   },
   inputError: {
@@ -168,7 +175,7 @@ const styles = StyleSheet.create({
   },
   helper: {
     fontSize: 12,
-    color: '#6b7280',
+    color: '#494949',
     marginTop: 4,
   },
 });

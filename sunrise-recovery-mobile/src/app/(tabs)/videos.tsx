@@ -146,23 +146,25 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 8,
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
+    textAlign: 'center',
   },
   videosSection: {
     padding: 20,
     paddingTop: 10,
   },
   sectionTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 16,
   },
   videoItem: {
@@ -177,12 +179,12 @@ const styles = StyleSheet.create({
   videoTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 4,
   },
   videoDescription: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
     marginBottom: 12,
   },
   videoMeta: {
@@ -191,10 +193,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   categoryBadge: {
-    backgroundColor: '#0ea5e9',
-    paddingHorizontal: 8,
-    paddingVertical: 2,
-    borderRadius: 4,
+    backgroundColor: '#2772AA',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 6,
   },
   categoryText: {
     color: '#ffffff',

@@ -51,13 +51,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 4,
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
+    textAlign: 'center',
   },
 }); 

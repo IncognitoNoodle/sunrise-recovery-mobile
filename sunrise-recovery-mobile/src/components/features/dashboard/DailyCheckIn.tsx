@@ -182,7 +182,7 @@ export const DailyCheckIn: React.FC = () => {
         value={notes}
         onChangeText={setNotes}
         multiline
-        numberOfLines={3}
+        numberOfLines={6}
         style={styles.notesInput}
       />
 
@@ -212,14 +212,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 4,
   },
   subtitle: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
     marginBottom: 20,
   },
   moodContainer: {
@@ -236,8 +236,8 @@ const styles = StyleSheet.create({
     minWidth: 60,
   },
   moodOptionSelected: {
-    borderColor: '#0ea5e9',
-    backgroundColor: '#f0f9ff',
+    borderColor: '#2772AA',
+    backgroundColor: '#eff6ff',
   },
   moodEmoji: {
     fontSize: 24,
@@ -245,11 +245,12 @@ const styles = StyleSheet.create({
   },
   moodDescription: {
     fontSize: 10,
-    color: '#6b7280',
+    color: '#494949',
     textAlign: 'center',
+    fontWeight: '500',
   },
   notesInput: {
-    marginBottom: 20,
+    marginBottom: 8,
   },
   submitButton: {
     marginTop: 8,
@@ -260,12 +261,12 @@ const styles = StyleSheet.create({
   completedTitle: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#059669',
+    color: '#ABCA87',
     marginBottom: 8,
   },
   completedMessage: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
     textAlign: 'center',
   },
   loadingContent: {
@@ -274,7 +275,7 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
   },
   moodDisplay: {
     flexDirection: 'row',
@@ -284,12 +285,13 @@ const styles = StyleSheet.create({
   },
   moodText: {
     fontSize: 14,
-    color: '#374151',
+    color: '#494949',
     marginLeft: 5,
+    fontWeight: '500',
   },
   notesText: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
     fontStyle: 'italic',
     marginTop: 10,
   },
@@ -299,7 +301,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 20,
+    marginTop: 8,
   },
   cancelButton: {
     flex: 1,

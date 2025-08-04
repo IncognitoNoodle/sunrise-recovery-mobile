@@ -134,7 +134,7 @@ export default function AdminScreen() {
             
             <TouchableOpacity style={styles.actionButton} onPress={handleCreatePost}>
               <View style={styles.actionIcon}>
-                <Ionicons name="add-circle" size={24} color="#0ea5e9" />
+                <Ionicons name="add-circle" size={24} color="#2772AA" />
               </View>
               <View style={styles.actionContent}>
                 <Text style={styles.actionTitle}>Create Post</Text>
@@ -147,7 +147,7 @@ export default function AdminScreen() {
 
             <TouchableOpacity style={styles.actionButton} onPress={handleUploadVideo}>
               <View style={styles.actionIcon}>
-                <Ionicons name="videocam" size={24} color="#0ea5e9" />
+                <Ionicons name="videocam" size={24} color="#2772AA" />
               </View>
               <View style={styles.actionContent}>
                 <Text style={styles.actionTitle}>Upload Video</Text>
@@ -160,7 +160,7 @@ export default function AdminScreen() {
 
             <TouchableOpacity style={styles.actionButton} onPress={handleManageUsers}>
               <View style={styles.actionIcon}>
-                <Ionicons name="people" size={24} color="#0ea5e9" />
+                <Ionicons name="people" size={24} color="#2772AA" />
               </View>
               <View style={styles.actionContent}>
                 <Text style={styles.actionTitle}>Manage Users</Text>
@@ -251,14 +251,16 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 8,
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
+    textAlign: 'center',
   },
   content: {
     padding: 20,
@@ -268,9 +270,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   statsTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 16,
   },
   statsGrid: {
@@ -281,14 +283,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   statNumber: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
-    color: '#0ea5e9',
+    color: '#2772AA',
     marginBottom: 4,
   },
   statLabel: {
     fontSize: 12,
-    color: '#6b7280',
+    color: '#494949',
+    fontWeight: '500',
   },
   actionsCard: {
     marginBottom: 20,
@@ -315,12 +318,12 @@ const styles = StyleSheet.create({
   actionTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 4,
   },
   actionDescription: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
   },
   postsCard: {
     marginBottom: 20,
@@ -332,13 +335,13 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   postsTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
   },
   viewAllText: {
     fontSize: 14,
-    color: '#0ea5e9',
+    color: '#2772AA',
     fontWeight: '600',
   },
   postItem: {
@@ -355,7 +358,7 @@ const styles = StyleSheet.create({
   postTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     flex: 1,
   },
   statusBadge: {
@@ -371,7 +374,7 @@ const styles = StyleSheet.create({
   },
   postContent: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
     marginBottom: 8,
   },
   postDate: {
@@ -380,7 +383,7 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
     textAlign: 'center',
   },
   emptyContainer: {
@@ -389,7 +392,7 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
     marginTop: 12,
     marginBottom: 4,
   },
@@ -406,13 +409,13 @@ const styles = StyleSheet.create({
   unauthorizedTitle: {
     fontSize: 20,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginTop: 16,
     marginBottom: 8,
   },
   unauthorizedText: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
     textAlign: 'center',
   },
   postFooter: {
@@ -435,7 +438,7 @@ const styles = StyleSheet.create({
   },
   actionButtonText: {
     fontSize: 12,
-    color: '#0ea5e9',
+    color: '#2772AA',
     fontWeight: '600',
     marginLeft: 4,
   },

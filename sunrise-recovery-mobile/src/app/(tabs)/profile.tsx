@@ -114,7 +114,7 @@ export default function ProfileScreen() {
                 style={styles.editButton}
                 onPress={handleEdit}
               >
-                <Ionicons name="pencil" size={20} color="#0ea5e9" />
+                <Ionicons name="pencil" size={20} color="#2772AA" />
               </TouchableOpacity>
             </View>
 
@@ -225,14 +225,16 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 8,
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
+    textAlign: 'center',
   },
   content: {
     padding: 20,
@@ -250,7 +252,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: '#0ea5e9',
+    backgroundColor: '#2772AA',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 16,
@@ -261,12 +263,12 @@ const styles = StyleSheet.create({
   profileName: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 4,
   },
   profileEmail: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
   },
   editButton: {
     padding: 8,
@@ -298,20 +300,20 @@ const styles = StyleSheet.create({
   },
   detailLabel: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
   },
   detailValue: {
     fontSize: 14,
-    color: '#111827',
+    color: '#2772AA',
     fontWeight: '500',
   },
   statsCard: {
     marginBottom: 20,
   },
   statsTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600',
-    color: '#111827',
+    color: '#2772AA',
     marginBottom: 16,
   },
   statsGrid: {
@@ -322,21 +324,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   statNumber: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
-    color: '#0ea5e9',
+    color: '#2772AA',
     marginBottom: 4,
   },
   statLabel: {
     fontSize: 12,
-    color: '#6b7280',
+    color: '#494949',
+    fontWeight: '500',
   },
   logoutCard: {
     alignItems: 'center',
   },
   logoutText: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
     marginBottom: 12,
   },
   logoutButton: {

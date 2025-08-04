@@ -48,24 +48,24 @@ const styles = StyleSheet.create({
   
   // Variants
   default: {
-    shadowColor: '#000',
+    shadowColor: '#2772AA',
     shadowOffset: {
       width: 0,
-      height: 1,
+      height: 2,
     },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    elevation: 2,
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    elevation: 4,
   },
   elevated: {
-    shadowColor: '#000',
+    shadowColor: '#2772AA',
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 6,
     },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 8,
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 12,
   },
   outlined: {
     borderWidth: 1,

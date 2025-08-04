@@ -204,15 +204,15 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   title: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: '700',
-    color: '#111827',
+    color: '#2772AA',
     textAlign: 'center',
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
-    color: '#6b7280',
+    color: '#494949',
     textAlign: 'center',
     marginBottom: 32,
   },
@@ -242,11 +242,11 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#494949',
   },
   linkText: {
     fontSize: 14,
-    color: '#0ea5e9',
+    color: '#2772AA',
     fontWeight: '600',
   },
 });

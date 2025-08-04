@@ -135,10 +135,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   categoryBadge: {
-    backgroundColor: '#0ea5e9',
-    paddingHorizontal: 8,
-    paddingVertical: 2,
-    borderRadius: 4,
+    backgroundColor: '#2772AA',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 6,
   },
   categoryText: {
     color: '#ffffff',

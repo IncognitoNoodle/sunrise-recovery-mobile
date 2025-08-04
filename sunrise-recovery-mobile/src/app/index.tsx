@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'expo-router';
 import { useAuthStore } from '../stores/authStore';
-import { LoadingScreen } from '../components/ui/LoadingScreen';
+import * as SplashScreen from 'expo-splash-screen';
+
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
 
 export default function Index() {
   const { user, isLoading, initialize, isInitialized } = useAuthStore();
@@ -13,6 +16,9 @@ export default function Index() {
 
   useEffect(() => {
     if (isInitialized && !isLoading) {
+      // Hide the splash screen
+      SplashScreen.hideAsync();
+      
       if (user) {
         router.replace('/(tabs)');
       } else {
@@ -21,5 +27,6 @@ export default function Index() {
     }
   }, [user, isLoading, isInitialized, router]);
 
-  return <LoadingScreen />;
+  // Return null to let Expo handle the splash screen
+  return null;
 }
